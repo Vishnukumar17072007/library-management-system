@@ -2,6 +2,8 @@ import { useState } from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import {
   BookOpen,
+  LayoutDashboard,
+  Home,
   Heart,
   User,
   LogOut,
@@ -43,9 +45,17 @@ export default function Navbar() {
 
       {/* Desktop / Mobile Navigation */}
       <nav className={menuOpen ? "nav-menu open" : "nav-menu"}>
-        <NavLink to="/" className={navClass} end onClick={closeMenu}>
-          Home
-        </NavLink>
+        {isAdmin ? (
+          <NavLink to="/dashboard" className="nav-link">
+            <LayoutDashboard size={18} />
+            Dashboard
+          </NavLink>
+        ) : (
+          <NavLink to="/" className="nav-link">
+            <Home size={18} />
+            Home
+          </NavLink>
+        )}
 
         <NavLink to="/books" className={navClass} onClick={closeMenu}>
           Books

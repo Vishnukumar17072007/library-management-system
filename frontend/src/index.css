@@ -1380,3 +1380,337 @@ button:disabled {
     padding: 25px 20px;
   }
 }
+/* =========================
+   ADMIN DASHBOARD
+========================= */
+
+.dashboard-page {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* =========================
+   STAT CARDS
+========================= */
+
+.dashboard-stats {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+}
+
+.dashboard-stat-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 20px;
+  background: #111827;
+  border: 1px solid #334155;
+  border-radius: 12px;
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.dashboard-stat-card:hover {
+  transform: translateY(-2px);
+  border-color: #3b82f6;
+}
+
+.dashboard-stat-icon {
+  width: 46px;
+  height: 46px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(59, 130, 246, 0.15);
+  color: #3b82f6;
+
+  border-radius: 10px;
+  flex-shrink: 0;
+}
+
+.dashboard-stat-card p {
+  margin: 0 0 5px;
+
+  color: #94a3b8;
+  font-size: 14px;
+}
+
+.dashboard-stat-card h2 {
+  margin: 0;
+
+  color: #f8fafc;
+  font-size: 24px;
+}
+
+/* =========================
+   DASHBOARD SECTIONS
+========================= */
+
+.dashboard-section {
+  background: #0f172a;
+  border: 1px solid #334155;
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.section-header {
+  margin-bottom: 20px;
+}
+
+.section-header h2 {
+  margin: 0;
+
+  color: #f8fafc;
+  font-size: 20px;
+}
+
+/* =========================
+   RESERVATION STATISTICS
+========================= */
+
+.reservation-stats {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+}
+
+.reservation-stat {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 14px 16px;
+
+  background: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 8px;
+}
+
+.reservation-stat span {
+  color: #94a3b8;
+  font-size: 14px;
+}
+
+.reservation-stat strong {
+  color: #f8fafc;
+  font-size: 20px;
+}
+
+/* =========================
+   CHART
+========================= */
+
+.dashboard-chart {
+  width: 100%;
+  min-height: 320px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #94a3b8;
+}
+
+/* =========================
+   RECENT RESERVATIONS
+========================= */
+
+.dashboard-reservations {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.dashboard-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.dashboard-table th {
+  padding: 14px;
+
+  text-align: left;
+
+  color: #94a3b8;
+  font-size: 13px;
+  font-weight: 600;
+
+  border-bottom: 1px solid #334155;
+}
+
+.dashboard-table td {
+  padding: 14px;
+
+  color: #e2e8f0;
+
+  border-bottom: 1px solid #1e293b;
+}
+
+.dashboard-table tbody tr {
+  transition: background 0.2s ease;
+}
+
+.dashboard-table tbody tr:hover {
+  background: #172033;
+}
+
+/* =========================
+   BOOK
+========================= */
+
+.dashboard-book {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 220px;
+}
+
+.dashboard-book img,
+.dashboard-book-placeholder {
+  width: 42px;
+  height: 58px;
+
+  border-radius: 5px;
+
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.dashboard-book-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #1e293b;
+  color: #64748b;
+
+  font-size: 10px;
+  text-align: center;
+}
+
+.dashboard-book span {
+  color: #e2e8f0;
+  font-size: 14px;
+}
+
+/* =========================
+   USER
+========================= */
+
+.dashboard-user {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.dashboard-user strong {
+  color: #f1f5f9;
+  font-size: 14px;
+}
+
+.dashboard-user small {
+  color: #64748b;
+  font-size: 12px;
+}
+
+/* =========================
+   RESERVATION STATUS
+========================= */
+
+.reservation-status {
+  display: inline-flex;
+  align-items: center;
+
+  padding: 5px 10px;
+
+  border-radius: 20px;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  text-transform: capitalize;
+}
+
+.status-request {
+  background: rgba(245, 158, 11, 0.15);
+  color: #f59e0b;
+}
+
+.status-confirmed {
+  background: rgba(59, 130, 246, 0.15);
+  color: #3b82f6;
+}
+
+.status-rejected {
+  background: rgba(239, 68, 68, 0.15);
+  color: #ef4444;
+}
+
+.status-collected {
+  background: rgba(34, 197, 94, 0.15);
+  color: #22c55e;
+}
+
+.status-cancelled {
+  background: rgba(156, 163, 175, 0.15);
+  color: #9ca3af;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1100px) {
+  .dashboard-stats {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .reservation-stats {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 700px) {
+  .dashboard-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .reservation-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .dashboard-section {
+    padding: 15px;
+  }
+
+  .dashboard-stat-card {
+    padding: 15px;
+  }
+
+  .dashboard-stat-card h2 {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .dashboard-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .reservation-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-stat-card {
+    padding: 16px;
+  }
+
+  .dashboard-table th,
+  .dashboard-table td {
+    padding: 10px;
+  }
+}

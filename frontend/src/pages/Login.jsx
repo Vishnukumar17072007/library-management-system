@@ -34,7 +34,11 @@ export default function Login() {
 
       login(response.data);
 
-      navigate("/");
+      if (response.data.user.role === "admin") {
+        navigate("/dashboard");
+      } else {
+        navigate("/");
+      }
     } catch (error) {
       setError(error.response?.data?.message || "Login failed");
     } finally {
